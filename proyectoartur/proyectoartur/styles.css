@@ -1,0 +1,110 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    background-color: green;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.header button {
+    color: white;
+    margin-left: 10px;
+}
+
+.logo {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.profile-img {
+    height: 40px;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.select-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.select-container p {
+    margin: 0 20px 0 0;
+}
+
+.select-container select {
+    margin: 0 10px;
+    width: 200px;
+}
+
+.footer {
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.title {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.new-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: green;       
+}
+
+
+
+.footer-text {
+    flex: 1;
+}
+
+.footer-social {
+    display: flex;
+    align-items: center;
+}
+
+.social-icon {
+    height: 30px;
+    width: 30px;
+    margin-left: 10px;
+}
+
+

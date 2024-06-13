@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edificio</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="diseño.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <style>
+         .title-iniciar-sesion {
+    font-family: 'Lobster', sans-serif; /* Aplica la nueva fuente */
+    font-size: 2rem; /* Ajusta el tamaño de la fuente */
+    color: white; /* Ajusta el color si es necesario */
+    text-align: center; /* Centra el texto */
+  }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-left">
+            <img src="images/Universidad.png" alt="Logo" class="logo">
+            <div class="title-iniciar-sesion">
+            <h3>Inventario castores</h3>
+        </div>
+        </div> 
+        <div class="title-iniciar-sesion">         
+        <div class="header-center"><h4>Consulta de registros</h4></div>
+        </div>
+        <div class="header-right">
+            <button type="button" class="btn btn-danger" onclick="goBack()">Regresar</button>
+            <img src="images/perfil.png" alt="Perfil" class="profile-img">
+        </div>
+    </div>
+ <div class="container">
+            <section class="main row">
+            <nav class="col-xs-12 col-sm-4 col-md-3 col-lg-3"> <br> Contenido de la página
+            <ul>
+        
+                    <li><a href="#" onclick="goBack()">Regresar a la página principal</a></li>
+
+                </ul>
+            </nav>
+            <article class="col-xs-12 col-sm-4 col-md-6 col-lg-6">
+    <div class="select-container">
+        <select class="form-control">
+            <option selected disabled>Edificios</option>
+            <option>D1</option>
+            <option>D2</option>
+            <option>D3</option>
+            <option>D4</option>
+            <option>D5</option>
+        </select>
+        <select class="form-control">
+            <option selected disabled>Laboratorios</option>
+            <option>K1</option>
+            <option>K2</option>
+            <option>K3</option>
+            <option>K4</option>
+            <option>K5</option>
+        </select>
+        <select class="form-control">
+            <option selected disabled>Otra Areá</option>
+            <option>Rectoria</option>
+            <option>Biblioteca</option>
+            <option>Gimnasio</option>
+            <option>Lenguas</option>
+            <option>Cise </option>
+        </select>
+    </div>
+</article>
+<aside class="col-xs-12 col-sm-4 col-md-3 col-lg-3"> 
+    <p>
+    Contenido para descargar(registros)
+    </p>
+</aside>
+</section>
+ </div>
+    <div class="container">
+        <!-- Contenido adicional aquí -->
+    </div>
+
+    <div class="footer">
+        <button type="button" class="btn btn-primary" onclick="goNext('pagina2.html')">Entrar</button>
+    </div>
+    <div class="new-footer">
+        <div class="footer-text">
+            <p>© 2024 Universidad Tecnológica de Puebla. Todos los derechos reservados.</p>
+        </div>
+        <div class="footer-social">
+            <div class="container"><h6>Siguenos en nuestras redes sociales</h6></div>
+            <a href="https://www.facebook.com/OficialUTP" target="_blank">
+                <img src="images/facebook.png" alt="Facebook" class="social-icon">
+            </a>
+            <a href="https://x.com/OficialUTP" target="_blank">
+                <img src="images/x (2).png" alt="Twitter" class="social-icon">
+            </a>
+            <a href="https://www.instagram.com/utpueblaoficial/" target="_blank">
+                <img src="images/instagram.png" alt="Instagram" class="social-icon">
+            </a>
+        </div>
+    </div>
+    <script src="navigation.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>
