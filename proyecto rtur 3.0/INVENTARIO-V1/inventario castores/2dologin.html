@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ventana Flotante Login</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Estilo para el fondo oscuro detrás del modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Estilo para el modal */
+        .modal-content {
+            background: #0e6850;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            width: 300px;
+            text-align: center;
+        }
+
+        /* Estilo adicional para centrar el logo */
+        .imagen-logo {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Ajustes específicos para los inputs */
+        .form-control {
+            width: 100%; /* Ocupan todo el ancho del contenedor */
+            text-align: left; /* Texto alineado a la izquierda */
+        }
+
+        /* Espaciado entre campos */
+        .form-floating {
+            margin-bottom: 15px; /* Añade espacio entre los campos */
+        }
+
+        /* Ajustes de labels dentro de form-floating */
+        .form-floating > label {
+            padding-left: 10px; /* Añade un poco de padding para separar el texto del borde */
+        }
+
+        .btn-secondary {
+            background-color: #dc1b1b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <select id="showModal" class="form-select">
+            <option selected>Seleccione una opción</option>
+            <option value="login">Abrir Login</option>
+        </select>
+    </div>
+
+    <!-- Estructura del modal -->
+    <div id="modal" class="modal-overlay">
+        <div class="modal-content">
+            <form id="loginForm" class="body-form">
+                <img class="mb-4 m-auto imagen-logo" src="images/logo.jpg" alt="" width="150" height="120">
+                <h1 class="h3 mb-3 fw-normal">Iniciar sesión</h1>
+
+                <!-- Espacio añadido entre los inputs -->
+                <div class="form-floating mb-3">
+                    <label for="floatingInput">Usuario</label>
+                    <input type="email" class="form-control" id="floatingInput" placeholder="Usuario">
+                </div>
+
+                <div class="form-floating mb-3">
+                    <label for="floatingPassword">Contraseña</label>
+                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                </div>
+
+                <!-- Contenedor para los botones -->
+                <div class="d-flex justify-content-between">
+                    <button type="button" class="btn btn-secondary" id="cancelBtn">Cancelar</button>
+                    <button type="submit" class="btn btn-primary" id="btnAcceder">Acceder</button>
+                    <button type="button" class="btn btn-light" id="btnSoloVer">Solo ver</a></button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Función para mostrar el modal cuando se seleccione "Abrir Login"
+        document.getElementById('showModal').addEventListener('change', function() {
+            if (this.value === 'login') {
+                document.getElementById('modal').style.display = 'flex';
+            }
+        });
+
+        // Función para ocultar el modal cuando se hace clic en "Cancelar"
+        document.getElementById('cancelBtn').addEventListener('click', function() {
+            document.getElementById('modal').style.display = 'none';
+            document.getElementById('showModal').selectedIndex = 0;
+
+        });
+
+        // Agregar un evento de clic al botón "Solo ver"
+        document.getElementById('btnSoloVer').addEventListener('click', function() {
+            // Redirigir a la página deseada
+            window.location.href = 'https://javascript.info/array'; // Reemplaza 'otra_pagina.html' con la URL de la página a la que quieres redirigir
+            document.getElementById('showModal').selectedIndex = 0;
+        });
+
+        // Usuarios y contraseñas válidos
+        const usuariosValidos = [
+            { email: 'administrador@admin.com', contrasena: 'admin123' },
+            { email: 'encargadoD2@encar.com', contrasena: 'encarD2' },
+            { email: 'encargadoD1@encar.com', contrasena: 'encarD1' }
+        ];
+
+        // Función para validar el acceso
+        function validarAcceso(email, contrasena) {
+            return usuariosValidos.some(user => user.email === email && user.contrasena === contrasena);
+        }
+
+        // Manejo del formulario de login
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const email = document.getElementById('floatingInput').value;
+            const contrasena = document.getElementById('floatingPassword').value;
+
+            if (validarAcceso(email, contrasena)) {
+                window.location.href = 'index.html';
+            document.getElementById('showModal').selectedIndex = 0;
+            } else {
+                alert('Usuario o contraseña incorrectos');
+            }
+        });
+    </script>
+</body>
+</html>
